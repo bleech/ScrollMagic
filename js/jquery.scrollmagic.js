@@ -358,14 +358,16 @@ Greensock License info at http://www.greensock.com/licensing/
 			TODO: document me
 		*/
 
-		this.viewPortSize = function (newViewPortSize) {
-			if (!arguments.length) { // get
-				return _viewPortSize;
-			} else { // set
-				_option.viewPortSize = _viewPortSize = newViewPortSize;
-			}
-			return ScrollMagic;
-		};
+		this.viewPortSize = (function(_options){
+			function (newViewPortSize) {
+				if (!arguments.length) { // get
+					return _viewPortSize;
+				} else { // set
+					_options.viewPortSize = _viewPortSize = newViewPortSize;
+				}
+				return ScrollMagic;
+			};
+		})(_options);
 
 		/**
 		 * **Get** all infos or one in particular about the controller.
