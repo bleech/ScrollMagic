@@ -359,7 +359,7 @@ Greensock License info at http://www.greensock.com/licensing/
 		*/
 
 		this.viewPortSize = (function(_options){
-			function (newViewPortSize) {
+			return function(newViewPortSize) {
 				if (!arguments.length) { // get
 					return _viewPortSize;
 				} else { // set
